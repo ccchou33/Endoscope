@@ -3,32 +3,17 @@
 buildscript {
     repositories {
         google()
-        mavenCentral()  // Changed from jcenter()
+        mavenCentral()
     }
     dependencies {
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':libstreaming')
-    implementation "com.android.support:appcompat-v7:$androidSupportAppcompatVersion"
-    implementation "com.android.support:support-v4:$androidSupportVersion"
-    implementation "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodeReaderViewVersion"
-    implementation('com.github.kenglxn.QRGen:android:2.2.0') {
-        exclude group: 'com.google.zxing'
-    }
-    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
-    implementation "com.tbruyelle.rxpermissions:rxpermissions:$rxPermissionVersion"
-    implementation "io.reactivex:rxandroid:$rxAndroidVersion"
-    implementation "io.reactivex:rxjava:$rxJavaVersion"
-    implementation "net.grandcentrix.thirtyinch:thirtyinch:$thirtyinchVersion"
-    implementation "net.grandcentrix.thirtyinch:thirtyinch-rx:$thirtyinchVersion"
-    testImplementation 'junit:junit:4.12'
+        classpath 'com.android.tools.build:gradle:3.0.0' // Add Android plugin if missing
     }
 }
 
 allprojects {
     repositories {
         google()
-        mavenCentral()  // Changed from jcenter()
+        mavenCentral()
         maven {
             url "https://jitpack.io"
         }
